@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="row align-items-center">
+        <form (ngSubmit)="onsubmit()">
+            <div class="form-group">
+                Book_id : <input name="b_id" formControlName="b_id" placeholder="book_id" class="form-control" required/>
+            </div>
+            <div class="form-group">
+                Book_Name : <input name="b_name" formControlName="b_name" placeholder="name" class="form-control" required/>
+            </div>
+            <div class="form-group">
+                Author : <input name="author" formControlName="author" placeholder="name" class="form-control" required/>
+            </div>
+            &nbsp;
+
+            <div class="form-group">
+                <button class="btn btn-sm btn-primary" type="submit">ADD</button>
+            </div>
+        </form>
+        <ul class="nav nav-pills">
+            <li class="nav-item"><a class="nav-link" href="/admin-login">Back</a></li>
+        </ul>
+    </div>
+
+</body>
+
+</html>
+
+<!-- <div>
+    <table class="table" style="width: 80%">
+        <tr>
+            <th>Book-ID</th>
+            <th>Book-Name</th>
+            <th>Author</th>
+            <th></th>
+        </tr>
+        <tr *ngFor="let books of book">
+            <td>
+                {{books.b_id}}
+            </td>
+            <td>
+                {{books.b_name}}
+            </td>
+            <td>
+                {{books.author}}
+            </td>
+        </tr>
+    </table>
+</div>
+<div>
+    <p>
+        
+    </p>
+</div> -->
+<!-- <router-outlet></router-outlet> -->
+<!-- <button (click)="addBook()"> Add Book</button> -->
