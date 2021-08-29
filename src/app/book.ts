@@ -12,8 +12,8 @@
 //   }
 // }
 
-export interface book{
-  b_id : string;
-  b_name : string;
-  author : string;
+export class books{
+  b_id : string | undefined  ;
+  b_name : string | undefined;
+  author : string | undefined;
 }

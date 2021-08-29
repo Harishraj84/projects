@@ -11,6 +11,7 @@ export class ViewbooksComponent implements OnInit {
 
   book: Array<any> = [];
   b_id:any;
+  search: any;
 
   constructor(private bookService:BookService) { }
 
@@ -19,8 +20,14 @@ export class ViewbooksComponent implements OnInit {
      this.book = data;
    });
 
-   this.bookService.deleteBook
+   
+
   
   }
+ 
 
 }
+function getOne(book: any, any: any) {
+  throw new Error('Function not implemented.');
+}
+

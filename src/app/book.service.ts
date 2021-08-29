@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import { Observable } from 'rxjs';
-import { book } from './book';
+import { books } from './book';
 
 @Injectable({
   providedIn: 'root'
@@ -10,10 +10,10 @@ export class BookService {
 
   constructor(private httpClient:HttpClient) { }
 
-  api = "http://localhost:8080/book"
+  api = "http://localhost:8080/books"
 
   getAll(): Observable<any> {
-   return this.httpClient.get("http://localhost:8080/book");
+   return this.httpClient.get("http://localhost:8080/books");
   }
 
   // addBook(book: string) {
@@ -27,12 +27,16 @@ export class BookService {
 
   // }
 
-  addBook(book: Object): Observable<Object> {
-    return this.httpClient.post("http://localhost:8080/book/add", book);
+  getOne(b_id:any): Observable<any> {
+    return this.httpClient.get("http://localhost:8080/books" + "/" + b_id);
+   }
+
+  addBook(books:books): Observable<any> {
+    return this.httpClient.post("http://localhost:8080/books/add", books);
   }
 
-  deleteBook(b_id: number): Observable<any> {
-    return this.httpClient.delete("http://localhost:8080/book/${b_id}");
+  deleteBook(b_id: string){
+    return this.httpClient.delete("http://localhost:8080/books"+"/"+ b_id);
   }
 
 }

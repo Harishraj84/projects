@@ -4,41 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
 </head>
 
 <body>
 
-    <div class="row align-items-center">
-        <form action="" method="POST">
-            <div class="form-group">
-                Username : <input name="Username" placeholder="abc" class="form-control" required/>
-            </div>
-            <div class="form-group">
-                Password : <input name="password" type="password" placeholder="abc@1" class="form-control" required/>
-            </div>
-            &nbsp;
 
-            <div class="form-group">
-                <button class="btn btn-sm btn-primary">Sign-in</button>
-            </div>
-        </form>
-
-    </div>
-
-    <div class="container">
-        <p>This is online library.You can view the books and download,It provides a free, single-entry access point to view the manuscript of research executed, and distribute this information as widely as possible.</p>
-        <div class="w-25 p-1">
-            <img src="https://images-na.ssl-images-amazon.com/images/I/91VokXkn8hL.jpg" class="img-fluid">
-            <a class="nav-link" href="http://libgen.li/get.php?md5=fa913718ea4585dc4282d5e51abd3dc2&key=BB1UL8J8Y0THG3X9&mirr=1"><button class="btn btn-secondary"> Download Book</button>></a>
+    <form [formGroup]="registerForm" #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)">
+        <div class="form-group">
+            User_id : <input placeholder="user_id" class="form-control" formControlName="id" name="id" ngModel required/>
+            <div *ngIf="userid.invalid && userid.touched" class="alert alert-danger">Id is required</div>
+        </div>
+        <div class="form-group">
+            User_Name : <input placeholder="name" class="form-control" formControlName="name" name="name" ngModel required/>
+            <div *ngIf="username.invalid && username.touched" class="alert alert-danger">Name is required</div>
+        </div>
+        <div class="form-group">
+            Address : <input placeholder="address" class="form-control" formControlName="address" name="address" ngModel required/>
+            <div *ngIf="useraddress.invalid && useraddress.touched" class="alert alert-danger">Address is required</div>
         </div>
         &nbsp;
-        <div class="w-25 p-1">
-            <img src="http://libgen.li/covers/2837000/710fffb6939159bbf4093916164dea34-g.jpg" class="img-fluid">
-            <a class="nav-link" href="http://libgen.li/get.php?md5=710fffb6939159bbf4093916164dea34&key=KPDBJ8MDX3FHFH43"><button class="btn btn-secondary"> Download Book</button>></a>
+
+        <div class="form-group">
+            <button class="btn btn-sm btn-success" type="submit">Register</button>
         </div>
-    </div>
+
+
+
+    </form>
+
 </body>
 
 </html>

@@ -9,6 +9,12 @@ import { HomeComponent } from './home/home.component';
 import { AddbookComponent } from './addbook/addbook.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { UserComponent } from './user/user.component';
+import { BooksComponent } from './books/books.component';
+import { FormsModule } from '@angular/forms';
+import { ViewbooksadminComponent } from './viewbooksadmin/viewbooksadmin.component';
+import { SearchPipe } from './search.pipe';
+
 
 @NgModule({
   declarations: [
@@ -16,13 +22,19 @@ import { ReactiveFormsModule } from '@angular/forms';
     ViewbooksComponent,
     AdminLoginComponent,
     HomeComponent,
-    AddbookComponent
+    AddbookComponent,
+    UserComponent,
+    BooksComponent,
+    ViewbooksadminComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
